@@ -1,4 +1,4 @@
-// Copyright 2020 Tsang Hao Fung. See the COPYRIGHT
+// Copyright 2024 Xingqiang Chen. See the COPYRIGHT
 // file at the top-level directory of this distribution and at
 // http://rust-lang.org/COPYRIGHT.
 //
