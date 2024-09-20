@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Vision Magic</title>
+        <link rel="apple-touch-icon" sizes="192x192" href="./assets/apple-icon.png">
+        <link rel="icon" type="image/png" sizes="192x192"  href="./assets/apple-icon.png">
+        <!-- UIkit CSS -->
+        <link rel="stylesheet" href="./uikit/css/uikit.min.css" />
+        <link rel="stylesheet" href="./assets/style.css" />
+
+        <!-- UIkit JS -->
+        <script src="./uikit/js/uikit.min.js"></script>
+        <script src="./uikit/js/uikit-icons.min.js"></script>
+    </head>
+
+    <body id="repair" class="uk-dark">
+        <div class="cursor"></div>
+        <!-- <canvas id="canvas"></canvas> -->
+        <input type="file" id="imageInput" accept="image/*" style="display: none;">
+        <div class="container uk-padding" uk-grid>
+            <div id="options" class="uk-width-1-4 uk-height-1-1 uk-grid-small uk-flex uk-flex-center" uk-grid>
+
+                <div class="uk-text-large">
+                    <a href="//github.com/visioniechor/visionmagic/">Vision Magic</a> Repair
+                </div>
+
+                <div class="uk-width-1-1 uk-flex uk-flex-right">
+                    <div class="uk-button-group">
+                        <a href="#" id="clustering-color" class="selected uk-button uk-button-default">FMM</a>
+                    </div>
+                </div>
+
+                <div class="uk-width-1-1 uk-flex uk-flex-right">
+                    <div>
+                        Brush Size
+                    </div>
+                </div>
+                <div id="brusher_value" class="uk-width-1-6">
+                    0.0
+                </div>
+                <div class="uk-width-5-6">
+                    <input id="brusher" class="uk-range" type="range" min="0" max="100" value="0">
+                </div>
+
+                <div class="uk-width-1-1 uk-flex uk-flex-right">
+                    <div>
+                        Blur Radius
+                    </div>
+                </div>
+                <div id="blurriness_value" class="uk-width-1-6">
+                    0.0
+                </div>
+                <div class="uk-width-5-6">
+                    <input id="blurriness" class="uk-range" type="range" min="2.0" max="20.0" step="any" value="0.0">
+                </div>
+
+                <p></p>
+
+                <div class="uk-width-1-1 uk-flex uk-flex-right">
+                    <div id="progressregion" class="uk-width-1-1" style="display: none;">
+                        <progress id="progressbar" class="uk-progress" value="0" max="100" style="width: 98%;"></progress>
+                    </div>
+                </div>
+            </div>
+            <div class="uk-width-3-4">
+                <div id="drop" class="uk-padding uk-flex uk-flex-center">
+                    <div id="canvas-container" class="uk-width-1-1">
+                        <canvas id="canvas" class="uk-width-1-1"></canvas>
+                        <canvas id="mask" class="uk-width-1-1"></canvas>
+                        <div id="droptext" class="uk-flex uk-flex-middle uk-flex-center">
+                            <p>Drag an image here or <a href="#" id="imageSelect">Select file</a></p>
+                        </div>
+                        <canvas id="frame"></canvas>
+                        <svg id="svg" version="1.1" xmlns="http://www.w3.org/2000/svg"></svg>
+                    </div>
+                </div>
+                <a id="export">Download as PNG</a>
+            </div>
+        </div>
+
+        <script src="./bootstrap.js"></script>
+    </body>
+</html>
